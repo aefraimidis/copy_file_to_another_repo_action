@@ -24,7 +24,7 @@ git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://x-access-t
 
 echo $INPUT_IGNORE_FILES
 
-INPUT_SOURCE_FILE=`ls -A | egrep -v '^("$INPUT_IGNORE_FILES")'`
+INPUT_SOURCE_FILE=`ls -A | egrep -v '^('$INPUT_IGNORE_FILES')'`
 
 cp -Rf $INPUT_SOURCE_FILE "$CLONE_DIR"
 cd "$CLONE_DIR"
