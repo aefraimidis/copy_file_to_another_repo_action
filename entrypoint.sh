@@ -25,7 +25,7 @@ git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://x-access-t
 
 INPUT_SOURCE_FILE=`ls -A | egrep -v '^(.htaccess|class.db_com.php|config.php)'`
 
-cp -Rf $INPUT_SOURCE_FILE "$CLONE_DIR
+cp -Rf $INPUT_SOURCE_FILE "$CLONE_DIR"
 cd "$CLONE_DIR"
 
 if [ ! -z "$INPUT_DESTINATION_BRANCH_CREATE" ]
