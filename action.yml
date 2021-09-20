@@ -25,6 +25,9 @@ inputs:
   commit_message:
     description: 'A custom message for the commmit'
     required: false
+  ignore_files:
+    description: 'Files to be ignored when coppied to the new repo'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -36,6 +39,7 @@ runs:
     - ${{ inputs.destination-branch }}
     - ${{ inputs.destination-branch-create }}
     - ${{ inputs.commit-message }}
+    - ${{ inputs.ignore_files }}
 branding:
   icon: 'git-commit'
   color: 'green'
