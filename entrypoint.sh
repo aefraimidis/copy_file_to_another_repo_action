@@ -22,9 +22,7 @@ git config --global user.email "$INPUT_USER_EMAIL"
 git config --global user.name "$INPUT_USER_NAME"
 git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://x-access-token:$API_TOKEN_GITHUB@github.com/$INPUT_DESTINATION_REPO.git" "$CLONE_DIR"
 
-echo $IGNORE_FILES
-
-INPUT_SOURCE_FILE=`ls -A | egrep -v '^($IGNORE_FILES)'`
+INPUT_SOURCE_FILE=`ls -A | egrep -v '^($INPUT_COMMIT_MESSAGE")'`
 
 cp -Rf $INPUT_SOURCE_FILE "$CLONE_DIR"
 cd "$CLONE_DIR"
@@ -44,7 +42,7 @@ echo "Adding git commit"
 git add .
 if git status | grep -q "Changes to be committed"
 then
-  git commit --message "$INPUT_COMMIT_MESSAGE"
+  git commit --message "push from dev"
   echo "Pushing git commit"
   git push -u origin HEAD:$OUTPUT_BRANCH
 else
