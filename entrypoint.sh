@@ -23,7 +23,7 @@ git config --global user.name "$INPUT_USER_NAME"
 git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://x-access-token:$API_TOKEN_GITHUB@github.com/$INPUT_DESTINATION_REPO.git" "$CLONE_DIR"
 
 
-INPUT_SOURCE_FILE=`ls -A | egrep -v "^('${IGNORE_FILES}')"`
+INPUT_SOURCE_FILE=`ls -A | egrep -v '^(${IGNORE_FILES})'`
 
 cp -Rf $INPUT_SOURCE_FILE "$CLONE_DIR"
 cd "$CLONE_DIR"
