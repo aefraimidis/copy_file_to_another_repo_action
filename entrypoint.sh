@@ -30,6 +30,8 @@ INPUT_SOURCE_FILE=`ls -A | egrep -v '^(.htaccess|class.db_com.php|config.php)'`
 cp -R $INPUT_SOURCE_FILE "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
 cd "$CLONE_DIR"
 
+ls -lrth 
+
 if [ ! -z "$INPUT_DESTINATION_BRANCH_CREATE" ]
 then
   git checkout -b "$INPUT_DESTINATION_BRANCH_CREATE"
