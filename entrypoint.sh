@@ -25,7 +25,7 @@ git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://x-access-t
 echo "Copying contents to git repo"
 mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER
 
-$INPUT_SOURCE_FILE = `ls -A | egrep -v '^(.htaccess|class.db_com.php|config.php)'`
+$INPUT_SOURCE_FILE=`ls -A | egrep -v '^(.htaccess|class.db_com.php|config.php)'`
 
 cp -R $INPUT_SOURCE_FILE "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
 cd "$CLONE_DIR"
